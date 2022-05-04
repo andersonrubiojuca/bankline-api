@@ -61,7 +61,7 @@ class SantanderUniversidadeApplicationTests {
 	public void insertMovimentacao() throws Exception {
 		mockMvc.perform(post(URL + "movimentacoes")
 				.contentType(MediaType.APPLICATION_JSON)
-				.content(asJsonString(new NovaMovimentacao("Teste", 50D, MovimentacaoTipo.RECEITA, 1)))
+				.content(asJsonString(new NovaMovimentacao("Teste", 50D, MovimentacaoTipo.RECEITA, 1, "2022-05-04")))
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 	}

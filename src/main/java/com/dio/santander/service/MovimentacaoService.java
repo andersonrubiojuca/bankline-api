@@ -1,6 +1,5 @@
 package com.dio.santander.service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,7 @@ public class MovimentacaoService {
 	public void save(NovaMovimentacao novaMovimentacao) {
 		Double valor = novaMovimentacao.getTipo() == MovimentacaoTipo.RECEITA ? novaMovimentacao.getValor() : novaMovimentacao.getValor() * -1;
 		
-		Movimentacao movimentacao = new Movimentacao(LocalDateTime.now(),
+		Movimentacao movimentacao = new Movimentacao(novaMovimentacao.getDataModel(),
 													novaMovimentacao.getDescricao(),
 													valor,
 													novaMovimentacao.getTipo(), 

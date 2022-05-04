@@ -81,6 +81,13 @@ public class Movimentacao {
 	public void setIdConta(Integer idConta) {
 		this.idConta = idConta;
 	}
+
+	@Override
+	public String toString() {
+		return "Movimentacao [id=" + id + ", dataHora=" + dataHora + ", descricao=" + descricao + ", valor=" + valor
+				+ ", tipo=" + tipo + ", idConta=" + idConta + "]";
+	}
+	
 	
 	
 }
