@@ -3,14 +3,18 @@ package com.dio.santander.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+@Entity
+@Table(name = "tab_movimentacao")
 public class Movimentacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +31,20 @@ public class Movimentacao {
 	@Column(name = "id_conta")
 	private Integer idConta;
 	
+	public Movimentacao() {}
 	
+	public Movimentacao(LocalDateTime dataHora, String descricao, Double valor, MovimentacaoTipo tipo,
+			Integer idConta) {
+		this.dataHora = dataHora;
+		this.descricao = descricao;
+		this.valor = valor;
+		this.tipo = tipo;
+		this.idConta = idConta;
+	}
+
+
+
+
 	public Integer getId() {
 		return id;
 	}

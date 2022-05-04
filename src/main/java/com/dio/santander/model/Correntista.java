@@ -21,7 +21,15 @@ public class Correntista {
 	@Embedded
 	private Conta conta;
 	
+	public Correntista() {}
 	
+	public Correntista(String cpf, String nome, Conta conta) {
+		super();
+		this.cpf = cpf;
+		this.nome = nome;
+		this.conta = conta;
+	}
+
 	public Integer getId() {
 		return id;
 	}

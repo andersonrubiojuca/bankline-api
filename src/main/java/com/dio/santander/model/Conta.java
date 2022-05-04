@@ -11,6 +11,12 @@ public class Conta {
 	@Column(name = "conta_saldo")
 	private Double saldo;
 	
+	
+	
+	public Conta(Double saldo, Long numero) {
+		this.numero = numero;
+		this.saldo = saldo;
+	}
 	public Long getNumero() {
 		return numero;
 	}
