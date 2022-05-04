@@ -25,6 +25,10 @@ public class MovimentacaoService {
 		return repository.findAll();
 	}
 	
+	public List<Movimentacao> findByIdConta(Integer idConta){
+		return repository.findByIdConta(idConta);
+	}
+	
 	public void save(NovaMovimentacao novaMovimentacao) {
 		Double valor = novaMovimentacao.getTipo() == MovimentacaoTipo.RECEITA ? novaMovimentacao.getValor() : novaMovimentacao.getValor() * -1;
 		
