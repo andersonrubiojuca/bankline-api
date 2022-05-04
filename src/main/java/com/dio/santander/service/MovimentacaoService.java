@@ -1,6 +1,7 @@
 package com.dio.santander.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,10 +22,12 @@ public class MovimentacaoService {
 	@Autowired
 	private CorrentistaRepository correntistaRepository;
 	
-	private void save(NovaMovimentacao novaMovimentacao) {
-		Double valor = novaMovimentacao.getValor();
-		if(novaMovimentacao.getTipo() == MovimentacaoTipo.DESPESA)
-			valor = valor * -1;
+	public List<Movimentacao> findAll() {
+		return repository.findAll();
+	}
+	
+	public void save(NovaMovimentacao novaMovimentacao) {
+		Double valor = novaMovimentacao.getTipo() == MovimentacaoTipo.RECEITA ? novaMovimentacao.getValor() : novaMovimentacao.getValor() * -1;
 		
 		Movimentacao movimentacao = new Movimentacao(LocalDateTime.now(),
 													novaMovimentacao.getDescricao(),

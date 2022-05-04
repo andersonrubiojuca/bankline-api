@@ -8,6 +8,19 @@ public class NovaMovimentacao {
 	private MovimentacaoTipo tipo;
 	private Integer idConta;
 	
+	public NovaMovimentacao() {}
+	
+	
+	public NovaMovimentacao(String descricao, Double valor, MovimentacaoTipo tipo, Integer idConta) {
+		super();
+		this.descricao = descricao;
+		this.valor = valor;
+		this.tipo = tipo;
+		this.idConta = idConta;
+	}
+
+
+
 	public String getDescricao() {
 		return descricao;
 	}

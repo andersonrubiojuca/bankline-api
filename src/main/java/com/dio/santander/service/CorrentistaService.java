@@ -1,6 +1,7 @@
 package com.dio.santander.service;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,12 @@ public class CorrentistaService {
 	
 	@Autowired
 	private CorrentistaRepository repository;
+	
+	public List<Correntista> findAll(){
+		return repository.findAll();
+	}
 
-	private void save(NovoCorrentista novoCorrentista) {
+	public void save(NovoCorrentista novoCorrentista) {
 		Conta conta = new Conta(0.0, new Date().getTime());
 		
 		Correntista correntista = new Correntista(novoCorrentista.getCpf(), novoCorrentista.getNome(), conta);
