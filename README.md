@@ -5,4 +5,4 @@ App do Domínio Bancário em Uma API REST usando o SpringBoot e Banco de Dados P
 ## Para rodar
 * importe o Banco de dados banklineapi_db na pasta raiz;
 * Altere o arquivo src/main/resources/application.properties com as informações do seu Banco de Dados;
-* compile o código (se quiser, pode usar com os projetos ditos acima.
+* compile o código (se quiser, pode usar com os projetos ditos acima).
